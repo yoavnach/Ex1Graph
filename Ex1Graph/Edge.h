@@ -39,6 +39,8 @@ namespace graph
 			return this->weight <= b.weight;
 		}
 
+		
+
 	};
 }
 

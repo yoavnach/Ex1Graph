@@ -9,24 +9,6 @@ using namespace graph;
 
 int main()
 {
-	MinHeap<int> mH;
-	mH.add(1);
-	mH.add(36);
-	mH.add(12);
-	mH.add(4);
-	mH.add(2);
-	mH.add(7);
-	mH.add(8);
-	mH.add(14);
-	mH.add(11);
-	mH.add(9);
-
-	std::cout << "{ ";
-	for (int i = 0; i < 9; i++)
-	{
-		std::cout << mH.removeMin() << ", ";
-	}
-	std::cout << mH.removeMin() << " }";
 
 
 	Graph* graph = new Graph(10,true);
@@ -41,7 +23,6 @@ int main()
 	graph->addEdge(7, 8, 1233);
 	graph->addEdge(8, 9, 76);
 	graph->addEdge(5, 9, 8);
-
 
 	graph->printGraph();
 	std::cout << "\n";
@@ -75,7 +56,6 @@ int main()
 	g->printGraph();
 
 	delete g;
-
 
 
 	

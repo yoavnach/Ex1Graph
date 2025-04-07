@@ -1,4 +1,3 @@
-#pragma once
 namespace graph
 {
 	template<typename T>
@@ -110,14 +109,19 @@ namespace graph
 			{
 				if (update < this->arr[old])
 				{
+					delete this->arr[old];
 					this->arr[old] = update;
 					this->pushUp(old);
 				}
 				else if(update>this->arr[old])
 				{
+					delete this->arr[old];
 					this->arr[old] = update;
 					this->pushDown(old);
 				}
+			}
+			else{
+				delete update;
 			}
 		}
 
@@ -128,9 +132,16 @@ namespace graph
 
 		~MinHeap()
 		{
+			for(int i=0;i<this->arrLength;i++)
+			{
+				if(this->arr[i]!=NULL)
+				{
+					delete this->arr[i];
+				}
+			}
 			delete[] this->arr;
 		}
-
+		
 		
 	};
 }

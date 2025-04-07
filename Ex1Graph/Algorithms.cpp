@@ -2,7 +2,8 @@
 #include "Queue.h"
 #include "Stack.h"
 #include <iostream>
-#include "minHeap.h"
+#include "MinHeap.h"
+#include <limits.h>
 
 namespace graph
 {
@@ -72,10 +73,10 @@ namespace graph
 		int* parent = new int[n];
 		bool* visited = new bool[n]();
 		Graph* ans = new Graph(n,true);
-		MinHeap<Edge*> edges;
+		MinHeap<Edge*>* edges =new MinHeap<Edge*>();
 		dist[root] = 0;
 		parent[root] = root;
-		edges.add(new Edge(root,-1,0));
+		edges->add(new Edge(root,-1,0));
 		for (int i = 0; i < n; i++)
 		{
 			if (i != root)
@@ -84,9 +85,9 @@ namespace graph
 				dist[i] = INT_MAX;
 			}
 		}
-		while (!edges.isEmpty())
+		while (!edges->isEmpty())
 		{
-			Edge* shortest = edges.removeMin();
+			Edge* shortest = edges->removeMin();
 			int v = shortest->getParent();
 			if (!visited[v])
 			{
@@ -100,7 +101,7 @@ namespace graph
 						{
 							parent[i] = v;
 							dist[i] = newDist;
-							edges.update(new Edge(i,-1, newDist));
+							edges->update(new Edge(i,-1, newDist));
 						}
 					}
 				}
@@ -118,9 +119,12 @@ namespace graph
 			}
 			
 		}
+		
+		
 		delete[] dist;
 		delete[] parent;
 		delete[] visited;
+		delete edges;
 		return ans;
 	}
 	Graph* Algorithms::prim(Graph* g)
@@ -187,8 +191,7 @@ namespace graph
 
 	Graph* Algorithms::kruskal(Graph* g)
 	{
-		int n = g->getSize();
-		Graph* ans = new Graph(n, true);
+		
 		return NULL;
 	}
 
