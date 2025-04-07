@@ -1,4 +1,5 @@
-#pragma once
+//yoav1.nach@gmail.com
+
 namespace graph
 {
 	template<typename T>

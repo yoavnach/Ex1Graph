@@ -1,3 +1,5 @@
+//yoav1.nach@gmail.com
+
 #pragma once
 namespace graph
 {
@@ -38,6 +40,8 @@ namespace graph
 		{
 			return this->weight <= b.weight;
 		}
+
+		
 
 	};
 }

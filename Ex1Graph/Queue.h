@@ -1,4 +1,5 @@
-#pragma once
+//yoav1.nach@gmail.com
+
 #include <iostream>
 namespace graph
 {
@@ -21,6 +22,15 @@ namespace graph
 			this->size = 0;
 		}
 
+		bool isEmpty()
+		{
+			return this->size == 0;
+		}
+
+		T peek()
+		{
+			return this->arr[this->start];
+		}
 			void add(T add)
 			{
 				if (this->size == this->arrLength)
@@ -64,12 +74,9 @@ namespace graph
 
 			}
 
+			
 
-
-		T peek()
-		{
-			return this->arr[this->start];
-		}
+		
 
 		T pop()
 		{
@@ -87,10 +94,7 @@ namespace graph
 			return ans;
 		}
 
-		bool isEmpty()
-		{
-			return this->size == 0;
-		}
+		
 
 		void printQueue()
 		{
@@ -112,5 +116,3 @@ namespace graph
 		}
 	};
 }
-
-
